@@ -42,9 +42,9 @@ export default function HeroBanner({ medias = [] }: HeroBannerProps) {
         alt="TOP 10"
         width={15}
         height={15}
-        className="absolute bottom-[4px] left-[117px] z-10"
+        className="absolute bottom-1 left-29.25 z-10"
       />
-      <span className="absolute bottom-[2px] left-[138px] h-[20px] text-white text-center text-[13.723px] font-bold leading-5 tracking-[-0.041px] whitespace-nowrap z-10">
+      <span className="absolute bottom-0.5 left-34.5 h-5 text-white text-center text-[13.723px] font-bold leading-5 tracking-[-0.041px] whitespace-nowrap z-10">
         #{currentIndex + 1} in Korea Today
       </span>
     </div>

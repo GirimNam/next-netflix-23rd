@@ -18,10 +18,14 @@ export default function ContinueWatching({ medias = [] }: ContinueWatchingProps)
       <div className="flex gap-x-3 overflow-x-auto scrollbar-hide">
         {medias.map((media, index) => {
           const progress = PROGRESS_PATTERN[index % PROGRESS_PATTERN.length];
+          const mediaType = media.media_type 
+            ? (media.media_type === "tv" ? "tv" : "movie")
+            : (media.name ? "tv" : "movie");
+
           return (
             <Link
               key={media.id}
-              href={`/detail/${media.id}`}
+              href={`/detail/${media.id}?type=${mediaType}`}
               className="shrink-0"
             >
               <div className="relative w-30 h-44 rounded-sm overflow-hidden bg-zinc-700">

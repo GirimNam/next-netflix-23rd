@@ -1,4 +1,4 @@
-import type { TMDBListResponse } from "@/types/media";
+import type { MediaDetail, TMDBListResponse } from "@/types/media";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p";
@@ -43,3 +43,21 @@ export const fetchUSTVShows = () =>
 // 지역
 export const fetchAfricanMovies = () =>
   tmdbFetch("/discover/movie?with_origin_country=NG");
+
+export async function fetchMediaDetail(
+  id: number,
+  mediaType: "movie" | "tv"
+): Promise<MediaDetail> {
+  const res = await fetch(`${BASE_URL}/${mediaType}/${id}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
+    },
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    throw new Error(`TMDB API error: ${res.status}`);
+  }
+
+  return res.json();
+}

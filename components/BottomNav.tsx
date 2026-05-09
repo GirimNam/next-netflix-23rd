@@ -1,19 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import HomeFilledIcon from "@/components/icons/HomeFilledIcon";
+import SearchIcon from "@/components/icons/SearchIcon";
+import ComingSoonIcon from "@/components/icons/ComingSoonIcon";
+import DownloadsIcon from "@/components/icons/DownloadsIcon";
+import MoreIcon from "@/components/icons/MoreIcon";
 
 const NAV_ITEMS = [
-  { icon: "/icons/icon-home-filled.svg", label: "Home", href: "/home" },
-  { icon: "/icons/icon-search.svg", label: "Search", href: "/search" },
+  { Icon: HomeFilledIcon, label: "Home", href: "/home" },
+  { Icon: SearchIcon, label: "Search", href: "/search" },
   {
-    icon: "/icons/icon-comingsoon.svg",
+    Icon: ComingSoonIcon,
     label: "Coming Soon",
     href: "/comingSoon",
   },
-  { icon: "/icons/icon-downloads.svg", label: "Downloads", href: "/downloads" },
-  { icon: "/icons/icon-more.svg", label: "More", href: "/more" },
+  { Icon: DownloadsIcon, label: "Downloads", href: "/downloads" },
+  { Icon: MoreIcon, label: "More", href: "/more" },
 ];
 
 export default function BottomNav() {
@@ -22,7 +26,7 @@ export default function BottomNav() {
   return (
     <nav className="fixed bottom-0 flex flex-col w-93.75 bg-black">
       <div className="flex h-14 px-6 justify-between items-center">
-        {NAV_ITEMS.map(({ icon, label, href }) => {
+        {NAV_ITEMS.map(({ Icon, label, href }) => {
           const isActive = pathname === href;
           return (
             <Link
@@ -30,7 +34,7 @@ export default function BottomNav() {
               href={href}
               className={`flex flex-col items-center gap-1 text-[8px] ${isActive ? "text-white" : "text-Grey-700"}`}
             >
-              <Image src={icon} alt={label} width={18} height={18} />
+              <Icon width={18} height={18} />
               <span>{label}</span>
             </Link>
           );

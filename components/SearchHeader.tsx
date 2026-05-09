@@ -40,7 +40,7 @@ export default function SearchHeader({ onResults }: SearchHeaderProps) {
         value={query}
         onChange={handleChange}
         placeholder="Search for a show, movie, genre, e.t.c."
-        className="flex-1 bg-transparent text-white text-body2 placeholder:text-Grey-5 placeholder:text-label2 outline-none border-none focus:ring-0"
+        className="flex-1 bg-transparent text-white text-body2 placeholder:text-Grey-600 placeholder:text-label2 outline-none border-none focus:ring-0"
       />
       <Image src="/icons/icon-x.svg" alt="x" width={16} height={16} />
     </header>

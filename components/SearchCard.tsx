@@ -12,7 +12,7 @@ type SearchCardProps = {
 export default function SearchCard({ media, skeleton }: SearchCardProps) {
   if (skeleton) {
     return (
-      <div className="flex flex-row h-19 skeleton-item">
+      <div className="flex flex-row h-19">
         <div className="w-36.5 h-19 shrink-0 bg-zinc-700" />
         <div className="flex flex-1 flex-row items-center justify-between bg-Grey-800 px-4">
           <div className="h-4 w-32 bg-zinc-700 rounded" />

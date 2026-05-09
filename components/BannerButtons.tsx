@@ -11,7 +11,7 @@ export default function BannerButtons() {
           My List
         </span>
       </div>
-      <button className="flex items-center justify-center gap-3 bg-Grey-5 px-6 py-2 rounded">
+      <button className="flex items-center justify-center gap-3 bg-Grey-600 px-6 py-2 rounded">
         <PlayIcon width={18} height={16} />
         <span className="text-label1 text-black antialiased">Play</span>
       </button>
